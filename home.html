@@ -1,0 +1,106 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>기빨려 예약시스템 welcome</title>
+
+    <style>
+            #welcome {
+                margin-top: 5%;
+                font-family: 'Do Hyeon', sans-serif;
+                font-size: 48px;
+                text-align: center;
+                color: #aaa;
+                }
+            .wrap {
+                margin-top: 100px;
+                margin-left: 5%;
+                position: relative;
+                float: left;
+                }
+            bubble {
+                width: 100%;
+                vertical-align: middle;
+                top: 50%;
+                left: 50%;
+                display: inline-block;
+                }
+            #word {
+                font-family: 'Do Hyeon', sans-serif;
+                font-size: 36px;
+                text-shadow: 4px 4px 4px skyblue;
+                text-align: center;
+                color: #014167;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate( -50%, -50% );
+            }
+            body {
+                background-color: #014167;
+                background-size: cover;
+                height: 90%;
+            }
+            #bar {
+                font-family: 'Do Hyeon', sans-serif;
+                font-size: 24px;
+                text-align: right;
+                color: white;
+            }
+            #suc {
+                font-family: 'Do Hyeon', sans-serif;
+                font-size: 36px;
+                text-align: left;
+                color: white;
+            }
+            #chain {
+                margin-left: 20%;
+            }
+
+
+    </style>
+
+</head>
+<body>
+    <link href="https://fonts.googleapis.com/css?family=Do+Hyeon&display=swap&subset=korean" rel="stylesheet">
+    
+    <p id="suc">{{flag}}</p>
+
+    <p id="welcome">{{user.UserName}}님 환영합니다! 생활관 세탁기 예약 시스템입니다. &nbsp;&nbsp;&nbsp; <br>
+    <a id="bar" href="{% url 'account:myinfo' %}">내 정보</a>
+    <a id="bar" href="{% url 'account:logout' %}">로그아웃</a>
+    <a id="bar" href="{% url 'main:notice' %}">공지사항</a>
+    <a id="bar" href="{% url 'main:info' %}">이용안내</a>
+
+<div id="chain">
+    <a href="{% url 'machine:308_male' %}">
+        <div class="wrap">
+            <bubble><img src="{% static 'bubble.jpg' %}" width="180px"></bubble>
+            <div id="word">308관 남자</div></div></a>
+    <a href>
+        <div class="wrap">
+            <bubble><img src="{% static 'bubble.jpg' %}" width="190px"></bubble>
+            <div id="word">308관 여자</div></div></a>
+    <a href="{% url 'machine:309_male' %}">
+        <div class="wrap">
+            <bubble><img src="{% static 'bubble.jpg' %}" width="180px"></bubble>
+            <div id="word">309관 남자</div></div></a>
+    <a href>
+        <div class="wrap">
+            <bubble><img src="{% static 'bubble.jpg' %}" width="180px"></bubble>
+            <div id="word">309관 여자</div></div></a> <br>
+</div>
+    <!-- 
+    <h3>세탁기</h3>
+    {% for wm in WMS %}
+    {{wm}} <br>
+    {% endfor %}
+    <h3>건조기</h3> 
+    {% for dm in DMS %}
+    {{dm}} <br>
+    {% endfor %} -->
+</body>
+</html>
