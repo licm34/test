@@ -1,0 +1,24 @@
+<!--외부html-->
+{% load staticfiles %}
+<head>
+    <title>topbar</title>
+<style>
+    .topbar {
+    height: 100px;
+    background: #014167;
+    text-align: center;
+    }
+</style>
+</head>
+
+<body>
+
+        <div class="topbar">
+                <a href="{%url 'home'%}">
+                    <img src="{% static 'logo2.jpg' %}" height="100">
+                </a>
+        </div>
+        </body>
+</html>
+
+
